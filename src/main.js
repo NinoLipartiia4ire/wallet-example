@@ -47,7 +47,7 @@ function signedOutFlow() {
   document.getElementById('sign-in').addEventListener('click', () => {
     window.walletAccount.requestSignIn(
       // The contract name that would be authorized to be called by the user's account.
-      window.nearConfig.contractName,
+      {contractId: window.nearConfig.contractName, methodNames: ['sayHi']},
       // This is the app name. It can be anything.
       'Who was the last person to say "Hi!"?',
       // We can also provide URLs to redirect on success and failure.
